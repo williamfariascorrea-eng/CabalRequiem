@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar — Cabal Réquiem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Themes/Dark/style.css">
+</head>
+<body>
+    <main class="auth-page">
+        <div class="auth-card">
+            <div class="auth-card__header">
+                <img src="Imagens/Logo.png" alt="Cabal Réquiem" style="width:120px;display:block;margin:0 auto 15px;opacity:0.7;">
+                <h1>Entrar</h1>
+            </div>
+            <div class="auth-card__body">
+                <form action="login.php" method="POST">
+                    <div class="form-group">
+                        <label class="form-label">Usuário</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-input" required>
+                    </div>
+                    <div class="auth-card__options">
+                        <label class="auth-card__checkbox">
+                            <input type="checkbox">
+                            <span>Lembrar-me</span>
+                        </label>
+                        <a href="recover.html" class="auth-card__forgot">Esqueceu a senha?</a>
+                    </div>
+                    <button type="submit" class="form-btn"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+                </form>
+            </div>
+            <div class="auth-card__footer">
+                <p>Ainda não tem conta?</p>
+                <a href="register.html" class="auth-card__link"><i class="fas fa-user-plus"></i> Crie uma agora</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <img src="Imagens/Logo.png" alt="Cabal Réquiem" style="width:80px;">
+            <p class="footer__copy">© 2026 Cabal Réquiem — Todos os direitos reservados.</p>
+            <p class="footer__dev">Desenvolvido por Wonka</p>
+            <nav class="footer__nav">
+                <a href="login.html">Entrar</a>
+                <a href="register.html">Criar conta</a>
+                <a href="ranking.html">Rankings</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

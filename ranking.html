@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rankings — Cabal Réquiem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Themes/Dark/style.css">
+</head>
+<body>
+    <main>
+        <div class="container" style="max-width:1100px;">
+            <section class="hero" style="padding:30px 0;">
+                <!-- Stats no Topo -->
+                <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:15px;margin-bottom:25px;">
+                    <div class="card" style="text-align:center;">
+                        <div class="card__body" style="padding:12px;">
+                            <i class="fas fa-users" style="font-size:1.5rem;color:var(--primary);margin-bottom:6px;display:block;"></i>
+                            <div style="font-size:1.3rem;font-weight:800;color:var(--primary);">0</div>
+                            <div style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;">Contas</div>
+                        </div>
+                    </div>
+                    <div class="card" style="text-align:center;">
+                        <div class="card__body" style="padding:12px;">
+                            <i class="fas fa-user-ninja" style="font-size:1.5rem;color:var(--primary);margin-bottom:6px;display:block;"></i>
+                            <div style="font-size:1.3rem;font-weight:800;color:var(--primary);">0</div>
+                            <div style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;">Personagens</div>
+                        </div>
+                    </div>
+                    <div class="card" style="text-align:center;">
+                        <div class="card__body" style="padding:12px;">
+                            <i class="fas fa-user-check" style="font-size:1.5rem;color:var(--primary-light);margin-bottom:6px;display:block;"></i>
+                            <div style="font-size:1.3rem;font-weight:800;color:var(--primary-light);">0</div>
+                            <div style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;">Online</div>
+                        </div>
+                    </div>
+                    <div class="card" style="text-align:center;">
+                        <div class="card__body" style="padding:12px;">
+                            <i class="fas fa-server" style="font-size:1.5rem;color:var(--success);margin-bottom:6px;display:block;"></i>
+                            <div style="font-size:1.3rem;font-weight:800;color:var(--success);">Online</div>
+                            <div style="font-size:0.7rem;color:var(--text-muted);text-transform:uppercase;">Status</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ranking-page__header" style="text-align:center;margin-bottom:25px;">
+                    <h1 style="font-size:1.8rem;font-weight:900;text-transform:uppercase;background:linear-gradient(90deg,var(--primary),var(--primary-light));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px;">
+                        <i class="fas fa-trophy"></i> Rankings
+                    </h1>
+                    <p style="color:var(--text-muted);">Em breve...</p>
+                </div>
+
+                <div class="ranking-tabs" style="margin-bottom:20px;">
+                    <button class="ranking-tab active"><i class="fas fa-khanda"></i> Poder</button>
+                    <button class="ranking-tab"><i class="fas fa-level-up-alt"></i> Level</button>
+                    <button class="ranking-tab"><i class="fas fa-coins"></i> Gold</button>
+                </div>
+
+                <div class="card" style="padding:40px;text-align:center;color:var(--text-muted);">
+                    <i class="fas fa-trophy" style="font-size:4rem;margin-bottom:20px;opacity:0.3;"></i>
+                    <p style="font-size:1.1rem;">Ranking em manutenção</p>
+                    <p style="font-size:0.9rem;margin-top:10px;">Aguarde a atualização dos dados...</p>
+                </div>
+
+                <div class="guilds-section" style="margin-top:30px;">
+                    <div class="card" style="padding:40px;text-align:center;color:var(--text-muted);">
+                        <i class="fas fa-shield-alt" style="font-size:3.5rem;margin-bottom:20px;opacity:0.3;"></i>
+                        <p style="font-size:1.1rem;">Guilds em manutenção</p>
+                        <p style="font-size:0.9rem;margin-top:10px;">Aguarde a atualização dos dados...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <img src="Imagens/Logo.png" alt="Cabal Réquiem" style="width:80px;">
+            <p class="footer__copy">© 2026 Cabal Réquiem — Todos os direitos reservados.</p>
+            <p class="footer__dev">Desenvolvido por Wonka</p>
+            <nav class="footer__nav">
+                <a href="login.html">Entrar</a>
+                <a href="register.html">Criar conta</a>
+                <a href="ranking.html">Rankings</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
