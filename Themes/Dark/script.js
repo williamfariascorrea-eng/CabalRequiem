@@ -1,63 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const splash = document.getElementById('splash');
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navGroup = document.querySelector('.site-header__nav-group');
-    const loginForm = document.getElementById('loginForm');
+// ========== CABAL REQUIEM - PROTECTION ==========
 
-    if (splash) {
-        setTimeout(function() {
-            splash.classList.add('site-splash--hidden');
-        }, 1500);
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+}, false);
+
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) || 
+        (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'C')) {
+        e.preventDefault();
     }
+}, false);
 
-    if (mobileToggle && navGroup) {
-        mobileToggle.addEventListener('click', function() {
-            this.classList.toggle('is-active');
-            navGroup.classList.toggle('is-open');
-        });
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+}, false);
 
-        document.addEventListener('click', function(e) {
-            if (!navGroup.contains(e.target) && !mobileToggle.contains(e.target)) {
-                mobileToggle.classList.remove('is-active');
-                navGroup.classList.remove('is-open');
-            }
-        });
-    }
+document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+}, false);
 
-    const dropdownGroups = document.querySelectorAll('.primary-nav__group');
-    dropdownGroups.forEach(function(group) {
-        const link = group.querySelector('.primary-nav__link');
-        if (link) {
-            link.addEventListener('click', function(e) {
-                if (window.innerWidth <= 960) {
-                    e.preventDefault();
-                    group.classList.toggle('is-open');
-                }
-            });
-        }
-    });
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+    alert('Copying prohibited. © 2026 Cabal Réquiem');
+}, false);
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            const username = document.getElementById('username');
-            const password = document.getElementById('password');
-            
-            if (!username.value || !password.value) {
-                e.preventDefault();
-                alert('Por favor, preencha todos os campos.');
-                return false;
-            }
-        });
-    }
-    
-    const formInputs = document.querySelectorAll('.form-input');
-    formInputs.forEach(function(input) {
-        input.addEventListener('focus', function() {
-            this.parentElement.classList.add('is-focused');
-        });
-        
-        input.addEventListener('blur', function() {
-            this.parentElement.classList.remove('is-focused');
-        });
-    });
-});
+if (window.top !== window.self) {
+    window.top.location.href = window.self.location.href;
+}
+
+console.log('%c🚫 PROTEÇÃO ATIVA', 'color: red; font-size: 20px; font-weight: bold;');
+console.log('%c© 2026 Cabal Réquiem - Todos os direitos reservados', 'color: #E6B325; font-size: 14px;');
+console.log('%cEste site é protegido contra cópia.', 'color: #666; font-size: 12px;');
+
+(function() {
+    var originalCTO = Object.create;
+    Object.create = function(proto) {
+        return originalCTO.call(this, proto);
+    };
+})();
