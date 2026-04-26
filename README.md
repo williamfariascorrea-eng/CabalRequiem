@@ -1,55 +1,101 @@
-# Cabal Réquiem - Portal Oficial
+# 🐉 Cabal Réquiem — Portal Oficial
 
-Projeto reconstruído do site Cabal Réquiem com estrutura idêntica ao original.
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Online-brightgreen?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/Versão-1.0-blue?style=for-the-badge" alt="Versão">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="License">
+</p>
 
-## Estrutura do Projeto
+---
+
+> ✨ **Servidor privado de Cabal Online** — Junte-se à comunidade e revive a aventura!
+
+## 🎮 Sobre o Servidor
+
+| Recurso | Descrição |
+|--------|-----------|
+| **Rate EXP** | x10 |
+| **Rate Drop** | x5 |
+| **Rate Alz** | x5 |
+| **Classe** | MMORPG 3D |
+| **Status** | 🟢 Online |
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone o projeto
+git clone https://github.com/williamfariascorrea-eng/CabalRequiem.git
+
+# Abra no navegador
+cd CabalRequiem
+start index.html
+```
+
+Ou simplesmente abra o arquivo `index.html` no seu navegador.
+
+---
+
+## 📁 Estrutura do Projeto
 
 ```
 Cabal Online/
-├── index.html          # Página inicial
-├── login.html        # Página de login
-├── register.html    # Página de cadastro
-├── ranking.html    # Página de rankings
+├── index.html          # Página principal
+├── login.html        # Login de jogador
+├── register.html    # Criar conta
+├── ranking.html     # Rankings
+├── Imagens/
+│   └── Logo.png     # Logo do servidor
 └── Themes/
     └── Dark/
-        ├── style.css    # Estilos principais
-        ├── script.js   # Scripts JavaScript
+        ├── style.css    # Estilos
+        ├── script.js   # Scripts
         └── images/
-            ├── logo cabal origin.png
-            ├── fundo.jpg
-            ├── entrar.png
-            └── classe/
-                ├── gu.png  (Warrior)
-                ├── ga.png  (Force Shielder)
-                ├── at.png  (Force Gunner)
-                ├── du.png  (Blader)
-                ├── ma.png  (Wizard)
-                ├── aa.png  (Force Archer)
-                ├── ea.png  (Force Blader)
-                └── gl.png  (Gladiator)
+            └── logo cabal requiem.png
 ```
 
-## Imagens Necessárias
+---
 
-Baixe do site original:
-- Logo: `https://cabalorigen.top/Themes/Dark/images/logo%20cabal%20origin.png`
-- Fundo: `https://cabalorigen.top/Themes/Dark/images/fundo.jpg`
-- Img entrar: `https://cabalorigen.top/Themes/Dark/images/entrar.png`
-- Classes (em `classe/`):
-  - gu.png, ga.png, at.png, du.png, ma.png, aa.png, ea.png, gl.png
+## 🌟 Funcionalidades
 
-## Executar
+- 📊 **Estatísticas em tempo real** — Contagem de contas, personagens e jogadores online
+- 🏆 **Rankings** — Top players e guilds
+- 💬 **Comunidade** — Discord e WhatsApp
+- 🛒 **RMT** — Compra e venda de Alz segura
+- 📥 **Download** — Client do jogo
 
-Abra `index.html` no navegador ou use Live Server no VSCode.
+---
 
-## Tecnologías
+## 🎨 Design
 
-- HTML5, CSS3 (Flexbox, Grid, Animations)
-- JavaScript Vanilla
-- Font Awesome 6.5.1
-- Google Fonts (Montserrat, Orbitron)
+- Tema escuro moderno
+- Animações suaves na logo
+- Interface responsiva
+- Fontes personalizadas (Montserrat)
 
-## Créditos
+---
 
-Site original: https://cabalorigen.top/
-Desenvolvido por: LMTECH
+## 🔗 Links Úteis
+
+| Serviço | Link |
+|---------|------|
+| **Discord** | [Entrar](https://discord.gg/dxErsdyMF) |
+| **WhatsApp** | [Grupo](https://chat.whatsapp.com/KyfMRuUfTuzH8UJJXFJwhr) |
+| **Download** | Em breve |
+
+---
+
+## 📝 Licença
+
+Este projeto é open source. Sinta-se livre para contribuir!
+
+---
+
+<div align="center">
+
+**© 2026 Cabal Réquiem — Todos os direitos reservados**
+
+Desenvolvido por [William Corrêa](https://github.com/williamfariascorrea-eng)
+
+</div>
