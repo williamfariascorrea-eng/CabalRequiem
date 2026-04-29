@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro — Cabal Réquiem</title>
+    <title>Recuperar Senha — Cabal Réquiem</title>
     <meta name="author" content="William Corrêa">
     <meta name="copyright" content="© 2026 Cabal Réquiem">
     <meta name="robots" content="noindex, nofollow">
@@ -17,37 +17,25 @@
 <body>
     <main class="auth-page">
         <div class="auth-card">
-            <div class="auth-card__hero" style="text-align:center;padding:20px;">
-                <img src="Imagens/Logo.png" alt="" style="width:120px;margin:0 auto;opacity:0.7;filter:drop-shadow(0 0 15px rgba(0,163,255,0.3));">
-            </div>
             <div class="auth-card__header">
-                <i class="fas fa-user-plus"></i>
-                <h1>Criar Nova Conta</h1>
+                <i class="fas fa-key"></i>
+                <h1>Recuperar Senha</h1>
             </div>
             <div class="auth-card__body">
-                <form action="register.php" method="POST">
-                    <div class="form-group">
-                        <label class="form-label">Nome da Conta</label>
-                        <input type="text" class="form-input" required minlength="4" maxlength="16">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Senha</label>
-                        <input type="password" class="form-input" required minlength="6" maxlength="16">
-                    </div>
+                <form action="recover.php" method="POST">
                     <div class="form-group">
                         <label class="form-label">E-mail</label>
                         <input type="email" class="form-input" required>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Nome Pessoal</label>
-                        <input type="text" class="form-input" required>
+                        <label class="form-label">Código Pessoal</label>
+                        <input type="text" class="form-input" required minlength="4" maxlength="20">
                     </div>
-
-                    <button type="submit" class="form-btn"><i class="fas fa-user-plus"></i> Registrar</button>
+                    <button type="submit" class="form-btn"><i class="fas fa-key"></i> Enviar Link de Recuperação</button>
                 </form>
             </div>
             <div class="auth-card__footer">
-                <p>Já tem conta?</p>
+                <p>Lembrou da senha?</p>
                 <a href="login.html" class="auth-card__link"><i class="fas fa-sign-in-alt"></i> Entrar</a>
             </div>
         </div>

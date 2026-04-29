@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Server Status API</title>
+</head>
+<body>
+    <h1>Testing Server Status</h1>
+    <div id="result" style="font-family:monospace;background:#111;padding:20px;color:#0f0;">Loading...</div>
+    <script>
+        fetch('backend/api/server.php?resource=server')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('result').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(err => {
+                document.getElementById('result').innerHTML = '<span style="color:red;">Error: ' + err.message + '</span>';
+            });
+    </script>
+</body>
+</html>

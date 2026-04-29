@@ -19,6 +19,51 @@
     <link rel="stylesheet" href="Themes/Dark/style.css">
     <link rel="icon" type="image/png" href="Imagens/Logo.png">
     <script src="Themes/Dark/script.js" defer></script>
+    <script>
+        // Server status updater - with fallback
+        function updateServerStatus() {
+            fetch('backend/api/server.php?resource=server')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const statusEl = document.getElementById('server-status');
+                        const onlineEl = document.getElementById('server-online');
+                        
+                        if (statusEl && onlineEl) {
+                            // Update status text and color
+                            statusEl.textContent = data.data.status === 'online' ? 'Online' : 
+                                                 data.data.status === 'offline' ? 'Offline' : 
+                                                 data.data.status === 'maintenance' ? 'Manutenção' : 'Desconhecido';
+                            
+                            // Update indicator color
+                            statusEl.className = 'stats-list__value ';
+                            switch (data.data.status) {
+                                case 'online':
+                                    statusEl.classList.add('stats-list__value--online');
+                                    break;
+                                case 'offline':
+                                    statusEl.classList.add('stats-list__value--offline');
+                                    break;
+                                case 'maintenance':
+                                    statusEl.classList.add('stats-list__value--maintenance');
+                                    break;
+                            }
+                            // Update player count
+                            onlineEl.textContent = data.data.players_online;
+                        }
+                    }
+                })
+                .catch(error => {
+                    // Silently fail - keep default values
+                });
+        }
+        
+        // Update on load and every 30 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            updateServerStatus();
+            setInterval(updateServerStatus, 30000);
+        });
+    </script>
 </head>
 <body>
     <main>
@@ -60,12 +105,12 @@
                                     <div class="stats-list__item">
                                         <i class="fas fa-server"></i>
                                         <span class="stats-list__label">Status</span>
-                                        <span class="stats-list__value stats-list__value--online">Online</span>
+                                        <span class="stats-list__value" id="server-status">Online</span>
                                     </div>
                                     <div class="stats-list__item" style="background:rgba(197,160,89,0.15);">
                                         <i class="fas fa-user-check"></i>
                                         <span class="stats-list__label">Online</span>
-                                        <span class="stats-list__value" style="color:var(--primary-light);">0</span>
+                                        <span class="stats-list__value" style="color:var(--primary-light);" id="server-online">0</span>
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +168,7 @@
                         </div>
                     </div>
 
-                        <!-- Ranking Centro -->
+                    <!-- Ranking Centro -->
                     <div class="card">
                         <div class="card__header" style="justify-content:center;"><i class="fas fa-trophy"></i> Top 10 Ranking</div>
                         <div class="card__body" style="padding:30px;text-align:center;color:var(--text-muted);">
