@@ -23,16 +23,19 @@ class Database {
                 if (strpos(trim($line), '#') === 0) {
                     continue;
                 }
+                if (strpos($line, '=') === false) {
+                    continue;
+                }
                 list($key, $value) = explode('=', $line, 2);
                 $this->config[trim($key)] = trim($value);
             }
         } else {
-            // Fallback to example config
             $this->config = [
+                'DB_TYPE' => 'sqlsrv',
                 'DB_HOST' => 'localhost',
-                'DB_PORT' => '3306',
-                'DB_NAME' => 'cabal_online',
-                'DB_USER' => 'cabal_user',
+                'DB_PORT' => '1433',
+                'DB_NAME' => 'CabalOnline',
+                'DB_USER' => 'sa',
                 'DB_PASS' => ''
             ];
         }
@@ -40,12 +43,23 @@ class Database {
 
     private function connect() {
         try {
-            $dsn = sprintf(
-                'mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4',
-                $this->config['DB_HOST'],
-                $this->config['DB_PORT'],
-                $this->config['DB_NAME']
-            );
+            $dbType = $this->config['DB_TYPE'] ?? 'sqlsrv';
+            
+            if ($dbType === 'sqlsrv') {
+                $dsn = sprintf(
+                    'sqlsrv:Server=%s,%s;Database=%s',
+                    $this->config['DB_HOST'],
+                    $this->config['DB_PORT'],
+                    $this->config['DB_NAME']
+                );
+            } else {
+                $dsn = sprintf(
+                    'mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4',
+                    $this->config['DB_HOST'],
+                    $this->config['DB_PORT'],
+                    $this->config['DB_NAME']
+                );
+            }
 
             $options = [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -61,7 +75,7 @@ class Database {
             );
         } catch (PDOException $e) {
             error_log("Database connection failed: " . $e->getMessage());
-            throw new Exception("Database connection failed");
+            throw new Exception("Database connection failed: " . $e->getMessage());
         }
     }
 
