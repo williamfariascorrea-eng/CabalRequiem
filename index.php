@@ -30,6 +30,12 @@ if ($path === '/' || $path === '' || $path === '/index.html') {
 
 if (is_file($filePath) && is_readable($filePath)) {
     $ext = pathinfo($filePath, PATHINFO_EXTENSION);
+    
+    if ($ext === 'php') {
+        include $filePath;
+        exit;
+    }
+    
     $mimeTypes = [
         'html' => 'text/html',
         'css' => 'text/css',
@@ -40,8 +46,7 @@ if (is_file($filePath) && is_readable($filePath)) {
         'jpeg' => 'image/jpeg',
         'gif' => 'image/gif',
         'svg' => 'image/svg+xml',
-        'ico' => 'image/x-icon',
-        'php' => 'text/html'
+        'ico' => 'image/x-icon'
     ];
     header('Content-Type: ' . ($mimeTypes[$ext] ?? 'text/plain'));
     readfile($filePath);
