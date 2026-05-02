@@ -22,7 +22,7 @@
     <script>
         // Server status updater - with fallback
         function updateServerStatus() {
-            fetch('backend/api/server.php?resource=server')
+            fetch('/api/server')
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {

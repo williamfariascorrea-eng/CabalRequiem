@@ -53,12 +53,21 @@ class Database {
                     $this->config['DB_NAME']
                 );
             } else {
+if ($dbType === 'pgsql') {
+                $dsn = sprintf(
+                    'pgsql:host=%s;port=%s;dbname=%s',
+                    $this->config['DB_HOST'],
+                    $this->config['DB_PORT'],
+                    $this->config['DB_NAME']
+                );
+            } else {
                 $dsn = sprintf(
                     'mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4',
                     $this->config['DB_HOST'],
                     $this->config['DB_PORT'],
                     $this->config['DB_NAME']
                 );
+            }
             }
 
             $options = [
