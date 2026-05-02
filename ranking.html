@@ -13,6 +13,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="Themes/Dark/style.css">
     <script src="Themes/Dark/script.js" defer></script>
+    <script>
+        (function() {
+            document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey || e.keyCode === 123) {
+                    if ([85, 83, 80, 73].includes(e.keyCode) || e.keyCode === 123) {
+                        e.preventDefault(); return false;
+                    }
+                }
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 73) { e.preventDefault(); return false; }
+            });
+            document.addEventListener('selectstart', function(e) { e.preventDefault(); return false; });
+            document.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
+            if (window.top !== window.self) { window.top.location.href = window.self.location.href; }
+            document.addEventListener('keyup', function(e) { if (e.keyCode === 123) e.preventDefault(); });
+            document.addEventListener('copy', function(e) { e.preventDefault(); return false; });
+        })();
+    </script>
 </head>
 <body>
     <main>

@@ -20,6 +20,61 @@
     <link rel="icon" type="image/png" href="Imagens/Logo.png">
     <script src="Themes/Dark/script.js" defer></script>
     <script>
+        // Anti-fraud and copy protection
+        (function() {
+            // Disable right-click
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // Disable keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Ctrl+U, Ctrl+S, Ctrl+P, Ctrl+I, F12
+                if (e.ctrlKey || e.keyCode === 123) {
+                    if ([85, 83, 80, 73].includes(e.keyCode) || e.keyCode === 123) {
+                        e.preventDefault();
+                        return false;
+                    }
+                }
+                // Ctrl+Shift+I
+                if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+
+            // Disable text selection
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // Disable drag
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // Anti-iframe
+            if (window.top !== window.self) {
+                window.top.location.href = window.self.location.href;
+            }
+
+            // Disable F12
+            document.addEventListener('keyup', function(e) {
+                if (e.keyCode === 123) {
+                    e.preventDefault();
+                }
+            });
+
+            // Disable copy
+            document.addEventListener('copy', function(e) {
+                e.preventDefault();
+                return false;
+            });
+        })();
+
         // Server status updater - with fallback
         function updateServerStatus() {
             fetch('/api/server')
