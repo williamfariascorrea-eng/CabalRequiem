@@ -2,7 +2,7 @@ services:
   - type: web
     name: cabal-backend
     env: php
-    buildCommand: composer install --no-dev
+    buildCommand: cd backend && composer install --no-dev
     startCommand: php -S $PORT -t backend/public
     envVars:
       - key: APP_ENV
