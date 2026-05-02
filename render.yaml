@@ -3,7 +3,7 @@ services:
     name: cabal-backend
     env: php
     buildCommand: cd backend && composer install --no-dev
-    startCommand: php -S $PORT -t .
+    startCommand: php -S $PORT -t ..
     envVars:
       - key: APP_ENV
         value: production
