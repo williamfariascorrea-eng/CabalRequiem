@@ -74,51 +74,7 @@
                 return false;
             });
         })();
-
-        // Server status updater - with fallback
-        function updateServerStatus() {
-            fetch('/api/server')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        const statusEl = document.getElementById('server-status');
-                        const onlineEl = document.getElementById('server-online');
-                        
-                        if (statusEl && onlineEl) {
-                            // Update status text and color
-                            statusEl.textContent = data.data.status === 'online' ? 'Online' : 
-                                                 data.data.status === 'offline' ? 'Offline' : 
-                                                 data.data.status === 'maintenance' ? 'Manutenção' : 'Desconhecido';
-                            
-                            // Update indicator color
-                            statusEl.className = 'stats-list__value ';
-                            switch (data.data.status) {
-                                case 'online':
-                                    statusEl.classList.add('stats-list__value--online');
-                                    break;
-                                case 'offline':
-                                    statusEl.classList.add('stats-list__value--offline');
-                                    break;
-                                case 'maintenance':
-                                    statusEl.classList.add('stats-list__value--maintenance');
-                                    break;
-                            }
-                            // Update player count
-                            onlineEl.textContent = data.data.players_online;
-                        }
-                    }
-                })
-                .catch(error => {
-                    // Silently fail - keep default values
-                });
-        }
-        
-        // Update on load and every 30 seconds
-        document.addEventListener('DOMContentLoaded', function() {
-            updateServerStatus();
-            setInterval(updateServerStatus, 30000);
-        });
-    </script>
+</script>
 </head>
 <body>
     <main>
