@@ -1,9 +1,8 @@
 services:
-  - type: web
-    name: cabal-backend
-    env: php
-    buildCommand: cd backend && composer install --no-dev
-    startCommand: php -S $PORT -t backend/public
+  - type: static
+    name: cabal-portfolio
+    buildCommand: ""
+    publishDir: .
     envVars:
       - key: APP_ENV
         value: production
